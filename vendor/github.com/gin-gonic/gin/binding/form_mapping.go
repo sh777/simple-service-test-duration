@@ -12,7 +12,10 @@ import (
 	"strings"
 	"time"
 
+<<<<<<< HEAD
 	"github.com/gin-gonic/gin/internal/bytesconv"
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	"github.com/gin-gonic/gin/internal/json"
 )
 
@@ -29,6 +32,7 @@ func mapForm(ptr interface{}, form map[string][]string) error {
 var emptyField = reflect.StructField{}
 
 func mapFormByTag(ptr interface{}, form map[string][]string, tag string) error {
+<<<<<<< HEAD
 	// Check if ptr is a map
 	ptrVal := reflect.ValueOf(ptr)
 	var pointed interface{}
@@ -44,6 +48,8 @@ func mapFormByTag(ptr interface{}, form map[string][]string, tag string) error {
 		return setFormMap(ptr, form)
 	}
 
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	return mappingByPtr(ptr, formSource(form), tag)
 }
 
@@ -224,9 +230,15 @@ func setWithProperType(val string, value reflect.Value, field reflect.StructFiel
 		case time.Time:
 			return setTimeField(val, field, value)
 		}
+<<<<<<< HEAD
 		return json.Unmarshal(bytesconv.StringToBytes(val), value.Addr().Interface())
 	case reflect.Map:
 		return json.Unmarshal(bytesconv.StringToBytes(val), value.Addr().Interface())
+=======
+		return json.Unmarshal([]byte(val), value.Addr().Interface())
+	case reflect.Map:
+		return json.Unmarshal([]byte(val), value.Addr().Interface())
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	default:
 		return errUnknownType
 	}
@@ -285,7 +297,11 @@ func setTimeField(val string, structField reflect.StructField, value reflect.Val
 
 	switch tf := strings.ToLower(timeFormat); tf {
 	case "unix", "unixnano":
+<<<<<<< HEAD
 		tv, err := strconv.ParseInt(val, 10, 64)
+=======
+		tv, err := strconv.ParseInt(val, 10, 0)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 		if err != nil {
 			return err
 		}
@@ -364,6 +380,7 @@ func head(str, sep string) (head string, tail string) {
 	}
 	return str[:idx], str[idx+len(sep):]
 }
+<<<<<<< HEAD
 
 func setFormMap(ptr interface{}, form map[string][]string) error {
 	el := reflect.TypeOf(ptr).Elem()
@@ -390,3 +407,5 @@ func setFormMap(ptr interface{}, form map[string][]string) error {
 
 	return nil
 }
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7

@@ -2,9 +2,12 @@
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file.
 
+<<<<<<< HEAD
 //go:build !nomsgpack
 // +build !nomsgpack
 
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 package render
 
 import (
@@ -13,10 +16,13 @@ import (
 	"github.com/ugorji/go/codec"
 )
 
+<<<<<<< HEAD
 var (
 	_ Render = MsgPack{}
 )
 
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 // MsgPack contains the given interface object.
 type MsgPack struct {
 	Data interface{}

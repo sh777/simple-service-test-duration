@@ -428,7 +428,11 @@ type PtraceIoDesc struct {
 	Op   int32
 	Offs *byte
 	Addr *byte
+<<<<<<< HEAD
 	Len  uint
+=======
+	Len  uint64
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 type Kevent_t struct {

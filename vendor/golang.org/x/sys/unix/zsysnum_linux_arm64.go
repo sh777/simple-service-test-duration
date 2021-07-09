@@ -297,4 +297,8 @@ const (
 	SYS_FSMOUNT                = 432
 	SYS_FSPICK                 = 433
 	SYS_PIDFD_OPEN             = 434
+<<<<<<< HEAD
+=======
+	SYS_CLONE3                 = 435
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 )

@@ -5,12 +5,19 @@
 package binding
 
 import (
+<<<<<<< HEAD
 	"fmt"
 	"reflect"
 	"strings"
 	"sync"
 
 	"github.com/go-playground/validator/v10"
+=======
+	"reflect"
+	"sync"
+
+	"gopkg.in/go-playground/validator.v9"
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 )
 
 type defaultValidator struct {
@@ -18,6 +25,7 @@ type defaultValidator struct {
 	validate *validator.Validate
 }
 
+<<<<<<< HEAD
 type sliceValidateError []error
 
 func (err sliceValidateError) Error() string {
@@ -31,10 +39,13 @@ func (err sliceValidateError) Error() string {
 	return strings.Join(errMsgs, "\n")
 }
 
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 var _ StructValidator = &defaultValidator{}
 
 // ValidateStruct receives any kind of type, but only performed struct or pointer to struct type.
 func (v *defaultValidator) ValidateStruct(obj interface{}) error {
+<<<<<<< HEAD
 	if obj == nil {
 		return nil
 	}
@@ -66,6 +77,20 @@ func (v *defaultValidator) ValidateStruct(obj interface{}) error {
 func (v *defaultValidator) validateStruct(obj interface{}) error {
 	v.lazyinit()
 	return v.validate.Struct(obj)
+=======
+	value := reflect.ValueOf(obj)
+	valueType := value.Kind()
+	if valueType == reflect.Ptr {
+		valueType = value.Elem().Kind()
+	}
+	if valueType == reflect.Struct {
+		v.lazyinit()
+		if err := v.validate.Struct(obj); err != nil {
+			return err
+		}
+	}
+	return nil
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 // Engine returns the underlying validator engine which powers the default

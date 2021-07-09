@@ -243,6 +243,10 @@ const (
 	BPF_F_LOCK                                  = 0x4
 	BPF_F_MARK_ENFORCE                          = 0x40
 	BPF_F_MARK_MANGLED_0                        = 0x20
+<<<<<<< HEAD
+=======
+	BPF_F_MMAPABLE                              = 0x400
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	BPF_F_NO_COMMON_LRU                         = 0x2
 	BPF_F_NO_PREALLOC                           = 0x1
 	BPF_F_NUMA_NODE                             = 0x4
@@ -417,8 +421,15 @@ const (
 	CLOCK_TXFROMRX                              = 0x4
 	CLOCK_TXINT                                 = 0x3
 	CLONE_ARGS_SIZE_VER0                        = 0x40
+<<<<<<< HEAD
 	CLONE_CHILD_CLEARTID                        = 0x200000
 	CLONE_CHILD_SETTID                          = 0x1000000
+=======
+	CLONE_ARGS_SIZE_VER1                        = 0x50
+	CLONE_CHILD_CLEARTID                        = 0x200000
+	CLONE_CHILD_SETTID                          = 0x1000000
+	CLONE_CLEAR_SIGHAND                         = 0x100000000
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	CLONE_DETACHED                              = 0x400000
 	CLONE_FILES                                 = 0x400
 	CLONE_FS                                    = 0x200
@@ -715,8 +726,14 @@ const (
 	FSCRYPT_POLICY_FLAGS_PAD_4                  = 0x0
 	FSCRYPT_POLICY_FLAGS_PAD_8                  = 0x1
 	FSCRYPT_POLICY_FLAGS_PAD_MASK               = 0x3
+<<<<<<< HEAD
 	FSCRYPT_POLICY_FLAGS_VALID                  = 0x7
 	FSCRYPT_POLICY_FLAG_DIRECT_KEY              = 0x4
+=======
+	FSCRYPT_POLICY_FLAGS_VALID                  = 0xf
+	FSCRYPT_POLICY_FLAG_DIRECT_KEY              = 0x4
+	FSCRYPT_POLICY_FLAG_IV_INO_LBLK_64          = 0x8
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	FSCRYPT_POLICY_V1                           = 0x0
 	FSCRYPT_POLICY_V2                           = 0x2
 	FS_ENCRYPTION_MODE_ADIANTUM                 = 0x9
@@ -746,7 +763,11 @@ const (
 	FS_POLICY_FLAGS_PAD_4                       = 0x0
 	FS_POLICY_FLAGS_PAD_8                       = 0x1
 	FS_POLICY_FLAGS_PAD_MASK                    = 0x3
+<<<<<<< HEAD
 	FS_POLICY_FLAGS_VALID                       = 0x7
+=======
+	FS_POLICY_FLAGS_VALID                       = 0xf
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	FUTEXFS_SUPER_MAGIC                         = 0xbad1dea
 	F_ADD_SEALS                                 = 0x409
 	F_DUPFD                                     = 0x0
@@ -1228,6 +1249,10 @@ const (
 	LOOP_SET_STATUS64                           = 0x4c04
 	LO_KEY_SIZE                                 = 0x20
 	LO_NAME_SIZE                                = 0x40
+<<<<<<< HEAD
+=======
+	MADV_COLD                                   = 0x14
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	MADV_DODUMP                                 = 0x11
 	MADV_DOFORK                                 = 0xb
 	MADV_DONTDUMP                               = 0x10
@@ -1240,6 +1265,10 @@ const (
 	MADV_MERGEABLE                              = 0xc
 	MADV_NOHUGEPAGE                             = 0xf
 	MADV_NORMAL                                 = 0x0
+<<<<<<< HEAD
+=======
+	MADV_PAGEOUT                                = 0x15
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	MADV_RANDOM                                 = 0x1
 	MADV_REMOVE                                 = 0x9
 	MADV_SEQUENTIAL                             = 0x2
@@ -1581,6 +1610,10 @@ const (
 	PERF_EVENT_IOC_SET_FILTER                   = 0x80042406
 	PERF_EVENT_IOC_SET_OUTPUT                   = 0x20002405
 	PIPEFS_MAGIC                                = 0x50495045
+<<<<<<< HEAD
+=======
+	PPC_CMM_MAGIC                               = 0xc7571590
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	PPPIOCATTACH                                = 0x8004743d
 	PPPIOCATTCHAN                               = 0x80047438
 	PPPIOCCONNECT                               = 0x8004743a
@@ -1591,6 +1624,11 @@ const (
 	PPPIOCGDEBUG                                = 0x40047441
 	PPPIOCGFLAGS                                = 0x4004745a
 	PPPIOCGIDLE                                 = 0x4008743f
+<<<<<<< HEAD
+=======
+	PPPIOCGIDLE32                               = 0x4008743f
+	PPPIOCGIDLE64                               = 0x4010743f
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	PPPIOCGL2TPSTATS                            = 0x40487436
 	PPPIOCGMRU                                  = 0x40047453
 	PPPIOCGNPMODE                               = 0xc008744c
@@ -1935,6 +1973,10 @@ const (
 	RTM_DELADDRLABEL                            = 0x49
 	RTM_DELCHAIN                                = 0x65
 	RTM_DELLINK                                 = 0x11
+<<<<<<< HEAD
+=======
+	RTM_DELLINKPROP                             = 0x6d
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	RTM_DELMDB                                  = 0x55
 	RTM_DELNEIGH                                = 0x1d
 	RTM_DELNETCONF                              = 0x51
@@ -1958,6 +2000,10 @@ const (
 	RTM_GETCHAIN                                = 0x66
 	RTM_GETDCB                                  = 0x4e
 	RTM_GETLINK                                 = 0x12
+<<<<<<< HEAD
+=======
+	RTM_GETLINKPROP                             = 0x6e
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	RTM_GETMDB                                  = 0x56
 	RTM_GETMULTICAST                            = 0x3a
 	RTM_GETNEIGH                                = 0x1e
@@ -1971,13 +2017,21 @@ const (
 	RTM_GETSTATS                                = 0x5e
 	RTM_GETTCLASS                               = 0x2a
 	RTM_GETTFILTER                              = 0x2e
+<<<<<<< HEAD
 	RTM_MAX                                     = 0x6b
+=======
+	RTM_MAX                                     = 0x6f
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	RTM_NEWACTION                               = 0x30
 	RTM_NEWADDR                                 = 0x14
 	RTM_NEWADDRLABEL                            = 0x48
 	RTM_NEWCACHEREPORT                          = 0x60
 	RTM_NEWCHAIN                                = 0x64
 	RTM_NEWLINK                                 = 0x10
+<<<<<<< HEAD
+=======
+	RTM_NEWLINKPROP                             = 0x6c
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	RTM_NEWMDB                                  = 0x54
 	RTM_NEWNDUSEROPT                            = 0x44
 	RTM_NEWNEIGH                                = 0x1c
@@ -1992,8 +2046,13 @@ const (
 	RTM_NEWSTATS                                = 0x5c
 	RTM_NEWTCLASS                               = 0x28
 	RTM_NEWTFILTER                              = 0x2c
+<<<<<<< HEAD
 	RTM_NR_FAMILIES                             = 0x17
 	RTM_NR_MSGTYPES                             = 0x5c
+=======
+	RTM_NR_FAMILIES                             = 0x18
+	RTM_NR_MSGTYPES                             = 0x60
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	RTM_SETDCB                                  = 0x4f
 	RTM_SETLINK                                 = 0x13
 	RTM_SETNEIGHTBL                             = 0x43
@@ -2208,7 +2267,11 @@ const (
 	SOL_TLS                                     = 0x11a
 	SOL_X25                                     = 0x106
 	SOL_XDP                                     = 0x11b
+<<<<<<< HEAD
 	SOMAXCONN                                   = 0x80
+=======
+	SOMAXCONN                                   = 0x1000
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	SO_ACCEPTCONN                               = 0x1009
 	SO_ATTACH_BPF                               = 0x32
 	SO_ATTACH_FILTER                            = 0x1a
@@ -2315,6 +2378,10 @@ const (
 	STATX_ATTR_ENCRYPTED                        = 0x800
 	STATX_ATTR_IMMUTABLE                        = 0x10
 	STATX_ATTR_NODUMP                           = 0x40
+<<<<<<< HEAD
+=======
+	STATX_ATTR_VERITY                           = 0x100000
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	STATX_BASIC_STATS                           = 0x7ff
 	STATX_BLOCKS                                = 0x400
 	STATX_BTIME                                 = 0x800
@@ -2434,6 +2501,10 @@ const (
 	TCP_THIN_DUPACK                             = 0x11
 	TCP_THIN_LINEAR_TIMEOUTS                    = 0x10
 	TCP_TIMESTAMP                               = 0x18
+<<<<<<< HEAD
+=======
+	TCP_TX_DELAY                                = 0x25
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	TCP_ULP                                     = 0x1f
 	TCP_USER_TIMEOUT                            = 0x12
 	TCP_WINDOW_CLAMP                            = 0xa
@@ -2532,6 +2603,13 @@ const (
 	TIPC_ADDR_MCAST                             = 0x1
 	TIPC_ADDR_NAME                              = 0x2
 	TIPC_ADDR_NAMESEQ                           = 0x1
+<<<<<<< HEAD
+=======
+	TIPC_AEAD_ALG_NAME                          = 0x20
+	TIPC_AEAD_KEYLEN_MAX                        = 0x24
+	TIPC_AEAD_KEYLEN_MIN                        = 0x14
+	TIPC_AEAD_KEY_SIZE_MAX                      = 0x48
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	TIPC_CFG_SRV                                = 0x0
 	TIPC_CLUSTER_BITS                           = 0xc
 	TIPC_CLUSTER_MASK                           = 0xfff000
@@ -2564,6 +2642,10 @@ const (
 	TIPC_MCAST_REPLICAST                        = 0x86
 	TIPC_MEDIUM_IMPORTANCE                      = 0x1
 	TIPC_NODEID_LEN                             = 0x10
+<<<<<<< HEAD
+=======
+	TIPC_NODELAY                                = 0x8a
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	TIPC_NODE_BITS                              = 0xc
 	TIPC_NODE_MASK                              = 0xfff
 	TIPC_NODE_OFFSET                            = 0x0

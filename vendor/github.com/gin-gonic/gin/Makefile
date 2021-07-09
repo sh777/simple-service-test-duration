@@ -1,16 +1,32 @@
 GO ?= go
 GOFMT ?= gofmt "-s"
+<<<<<<< HEAD
 PACKAGES ?= $(shell $(GO) list ./...)
 VETPACKAGES ?= $(shell $(GO) list ./... | grep -v /examples/)
 GOFILES := $(shell find . -name "*.go")
 TESTFOLDER := $(shell $(GO) list ./... | grep -E 'gin$$|binding$$|render$$' | grep -v examples)
 TESTTAGS ?= ""
+=======
+PACKAGES ?= $(shell $(GO) list ./... | grep -v /vendor/)
+VETPACKAGES ?= $(shell $(GO) list ./... | grep -v /vendor/ | grep -v /examples/)
+GOFILES := $(shell find . -name "*.go" -type f -not -path "./vendor/*")
+TESTFOLDER := $(shell $(GO) list ./... | grep -E 'gin$$|binding$$|render$$' | grep -v examples)
+
+all: install
+
+install: deps
+	govendor sync
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 .PHONY: test
 test:
 	echo "mode: count" > coverage.out
 	for d in $(TESTFOLDER); do \
+<<<<<<< HEAD
 		$(GO) test -tags $(TESTTAGS) -v -covermode=count -coverprofile=profile.out $$d > tmp.out; \
+=======
+		$(GO) test -v -covermode=count -coverprofile=profile.out $$d > tmp.out; \
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 		cat tmp.out; \
 		if grep -q "^--- FAIL" tmp.out; then \
 			rm tmp.out; \
@@ -44,6 +60,14 @@ fmt-check:
 vet:
 	$(GO) vet $(VETPACKAGES)
 
+<<<<<<< HEAD
+=======
+deps:
+	@hash govendor > /dev/null 2>&1; if [ $$? -ne 0 ]; then \
+		$(GO) get -u github.com/kardianos/govendor; \
+	fi
+
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 .PHONY: lint
 lint:
 	@hash golint > /dev/null 2>&1; if [ $$? -ne 0 ]; then \

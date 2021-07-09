@@ -22,9 +22,12 @@ type Reader struct {
 func (r Reader) Render(w http.ResponseWriter) (err error) {
 	r.WriteContentType(w)
 	if r.ContentLength >= 0 {
+<<<<<<< HEAD
 		if r.Headers == nil {
 			r.Headers = map[string]string{}
 		}
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 		r.Headers["Content-Length"] = strconv.FormatInt(r.ContentLength, 10)
 	}
 	r.writeHeaders(w, r.Headers)

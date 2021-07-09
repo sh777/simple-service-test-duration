@@ -3,6 +3,7 @@ language: go
 matrix:
   fast_finish: true
   include:
+<<<<<<< HEAD
   - go: 1.12.x
     env: GO111MODULE=on
   - go: 1.13.x
@@ -17,6 +18,14 @@ matrix:
   - go: 1.15.x
     env:
       - TESTTAGS=nomsgpack
+=======
+  - go: 1.10.x
+  - go: 1.11.x
+    env: GO111MODULE=on
+  - go: 1.12.x
+    env: GO111MODULE=on
+  - go: 1.13.x
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
   - go: master
 
 git:
@@ -26,7 +35,11 @@ before_install:
   - if [[ "${GO111MODULE}" = "on" ]]; then mkdir "${HOME}/go"; export GOPATH="${HOME}/go"; fi
 
 install:
+<<<<<<< HEAD
   - if [[ "${GO111MODULE}" = "on" ]]; then go mod download; fi
+=======
+  - if [[ "${GO111MODULE}" = "on" ]]; then go mod download; else make install; fi
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
   - if [[ "${GO111MODULE}" = "on" ]]; then export PATH="${GOPATH}/bin:${GOROOT}/bin:${PATH}"; fi
   - if [[ "${GO111MODULE}" = "on" ]]; then make tools; fi
 

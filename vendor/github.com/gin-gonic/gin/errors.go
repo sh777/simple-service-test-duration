@@ -55,7 +55,11 @@ func (msg *Error) SetMeta(data interface{}) *Error {
 
 // JSON creates a properly formatted JSON
 func (msg *Error) JSON() interface{} {
+<<<<<<< HEAD
 	jsonData := H{}
+=======
+	json := H{}
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	if msg.Meta != nil {
 		value := reflect.ValueOf(msg.Meta)
 		switch value.Kind() {
@@ -63,6 +67,7 @@ func (msg *Error) JSON() interface{} {
 			return msg.Meta
 		case reflect.Map:
 			for _, key := range value.MapKeys() {
+<<<<<<< HEAD
 				jsonData[key.String()] = value.MapIndex(key).Interface()
 			}
 		default:
@@ -73,6 +78,18 @@ func (msg *Error) JSON() interface{} {
 		jsonData["error"] = msg.Error()
 	}
 	return jsonData
+=======
+				json[key.String()] = value.MapIndex(key).Interface()
+			}
+		default:
+			json["meta"] = msg.Meta
+		}
+	}
+	if _, ok := json["error"]; !ok {
+		json["error"] = msg.Error()
+	}
+	return json
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 // MarshalJSON implements the json.Marshaller interface.
@@ -90,11 +107,14 @@ func (msg *Error) IsType(flags ErrorType) bool {
 	return (msg.Type & flags) > 0
 }
 
+<<<<<<< HEAD
 // Unwrap returns the wrapped error, to allow interoperability with errors.Is(), errors.As() and errors.Unwrap()
 func (msg *Error) Unwrap() error {
 	return msg.Err
 }
 
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 // ByType returns a readonly copy filtered the byte.
 // ie ByType(gin.ErrorTypePublic) returns a slice of errors with type=ErrorTypePublic.
 func (a errorMsgs) ByType(typ ErrorType) errorMsgs {
@@ -140,17 +160,29 @@ func (a errorMsgs) Errors() []string {
 }
 
 func (a errorMsgs) JSON() interface{} {
+<<<<<<< HEAD
 	switch length := len(a); length {
+=======
+	switch len(a) {
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	case 0:
 		return nil
 	case 1:
 		return a.Last().JSON()
 	default:
+<<<<<<< HEAD
 		jsonData := make([]interface{}, length)
 		for i, err := range a {
 			jsonData[i] = err.JSON()
 		}
 		return jsonData
+=======
+		json := make([]interface{}, len(a))
+		for i, err := range a {
+			json[i] = err.JSON()
+		}
+		return json
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	}
 }
 

@@ -95,42 +95,71 @@ func (group *RouterGroup) Handle(httpMethod, relativePath string, handlers ...Ha
 
 // POST is a shortcut for router.Handle("POST", path, handle).
 func (group *RouterGroup) POST(relativePath string, handlers ...HandlerFunc) IRoutes {
+<<<<<<< HEAD
 	return group.handle(http.MethodPost, relativePath, handlers)
+=======
+	return group.handle("POST", relativePath, handlers)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 // GET is a shortcut for router.Handle("GET", path, handle).
 func (group *RouterGroup) GET(relativePath string, handlers ...HandlerFunc) IRoutes {
+<<<<<<< HEAD
 	return group.handle(http.MethodGet, relativePath, handlers)
+=======
+	return group.handle("GET", relativePath, handlers)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 // DELETE is a shortcut for router.Handle("DELETE", path, handle).
 func (group *RouterGroup) DELETE(relativePath string, handlers ...HandlerFunc) IRoutes {
+<<<<<<< HEAD
 	return group.handle(http.MethodDelete, relativePath, handlers)
+=======
+	return group.handle("DELETE", relativePath, handlers)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 // PATCH is a shortcut for router.Handle("PATCH", path, handle).
 func (group *RouterGroup) PATCH(relativePath string, handlers ...HandlerFunc) IRoutes {
+<<<<<<< HEAD
 	return group.handle(http.MethodPatch, relativePath, handlers)
+=======
+	return group.handle("PATCH", relativePath, handlers)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 // PUT is a shortcut for router.Handle("PUT", path, handle).
 func (group *RouterGroup) PUT(relativePath string, handlers ...HandlerFunc) IRoutes {
+<<<<<<< HEAD
 	return group.handle(http.MethodPut, relativePath, handlers)
+=======
+	return group.handle("PUT", relativePath, handlers)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 // OPTIONS is a shortcut for router.Handle("OPTIONS", path, handle).
 func (group *RouterGroup) OPTIONS(relativePath string, handlers ...HandlerFunc) IRoutes {
+<<<<<<< HEAD
 	return group.handle(http.MethodOptions, relativePath, handlers)
+=======
+	return group.handle("OPTIONS", relativePath, handlers)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 // HEAD is a shortcut for router.Handle("HEAD", path, handle).
 func (group *RouterGroup) HEAD(relativePath string, handlers ...HandlerFunc) IRoutes {
+<<<<<<< HEAD
 	return group.handle(http.MethodHead, relativePath, handlers)
+=======
+	return group.handle("HEAD", relativePath, handlers)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 // Any registers a route that matches all the HTTP methods.
 // GET, POST, PUT, PATCH, HEAD, OPTIONS, DELETE, CONNECT, TRACE.
 func (group *RouterGroup) Any(relativePath string, handlers ...HandlerFunc) IRoutes {
+<<<<<<< HEAD
 	group.handle(http.MethodGet, relativePath, handlers)
 	group.handle(http.MethodPost, relativePath, handlers)
 	group.handle(http.MethodPut, relativePath, handlers)
@@ -140,6 +169,17 @@ func (group *RouterGroup) Any(relativePath string, handlers ...HandlerFunc) IRou
 	group.handle(http.MethodDelete, relativePath, handlers)
 	group.handle(http.MethodConnect, relativePath, handlers)
 	group.handle(http.MethodTrace, relativePath, handlers)
+=======
+	group.handle("GET", relativePath, handlers)
+	group.handle("POST", relativePath, handlers)
+	group.handle("PUT", relativePath, handlers)
+	group.handle("PATCH", relativePath, handlers)
+	group.handle("HEAD", relativePath, handlers)
+	group.handle("OPTIONS", relativePath, handlers)
+	group.handle("DELETE", relativePath, handlers)
+	group.handle("CONNECT", relativePath, handlers)
+	group.handle("TRACE", relativePath, handlers)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	return group.returnObj()
 }
 
@@ -187,7 +227,11 @@ func (group *RouterGroup) createStaticHandler(relativePath string, fs http.FileS
 	fileServer := http.StripPrefix(absolutePath, http.FileServer(fs))
 
 	return func(c *Context) {
+<<<<<<< HEAD
 		if _, noListing := fs.(*onlyFilesFS); noListing {
+=======
+		if _, nolisting := fs.(*onlyfilesFS); nolisting {
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 			c.Writer.WriteHeader(http.StatusNotFound)
 		}
 

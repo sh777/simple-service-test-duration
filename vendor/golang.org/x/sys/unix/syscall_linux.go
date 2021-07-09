@@ -1654,6 +1654,33 @@ func Setgid(uid int) (err error) {
 	return EOPNOTSUPP
 }
 
+<<<<<<< HEAD
+=======
+// SetfsgidRetGid sets fsgid for current thread and returns previous fsgid set.
+// setfsgid(2) will return a non-nil error only if its caller lacks CAP_SETUID capability.
+// If the call fails due to other reasons, current fsgid will be returned.
+func SetfsgidRetGid(gid int) (int, error) {
+	return setfsgid(gid)
+}
+
+// SetfsuidRetUid sets fsuid for current thread and returns previous fsuid set.
+// setfsgid(2) will return a non-nil error only if its caller lacks CAP_SETUID capability
+// If the call fails due to other reasons, current fsuid will be returned.
+func SetfsuidRetUid(uid int) (int, error) {
+	return setfsuid(uid)
+}
+
+func Setfsgid(gid int) error {
+	_, err := setfsgid(gid)
+	return err
+}
+
+func Setfsuid(uid int) error {
+	_, err := setfsuid(uid)
+	return err
+}
+
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 func Signalfd(fd int, sigmask *Sigset_t, flags int) (newfd int, err error) {
 	return signalfd(fd, sigmask, _C__NSIG/8, flags)
 }

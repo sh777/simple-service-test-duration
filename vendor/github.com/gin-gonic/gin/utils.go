@@ -90,6 +90,7 @@ func filterFlags(content string) string {
 }
 
 func chooseData(custom, wildcard interface{}) interface{} {
+<<<<<<< HEAD
 	if custom != nil {
 		return custom
 	}
@@ -97,16 +98,29 @@ func chooseData(custom, wildcard interface{}) interface{} {
 		return wildcard
 	}
 	panic("negotiation config is invalid")
+=======
+	if custom == nil {
+		if wildcard == nil {
+			panic("negotiation config is invalid")
+		}
+		return wildcard
+	}
+	return custom
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 func parseAccept(acceptHeader string) []string {
 	parts := strings.Split(acceptHeader, ",")
 	out := make([]string, 0, len(parts))
 	for _, part := range parts {
+<<<<<<< HEAD
 		if i := strings.IndexByte(part, ';'); i > 0 {
 			part = part[:i]
 		}
 		if part = strings.TrimSpace(part); part != "" {
+=======
+		if part = strings.TrimSpace(strings.Split(part, ";")[0]); part != "" {
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 			out = append(out, part)
 		}
 	}
@@ -130,7 +144,12 @@ func joinPaths(absolutePath, relativePath string) string {
 	}
 
 	finalPath := path.Join(absolutePath, relativePath)
+<<<<<<< HEAD
 	if lastChar(relativePath) == '/' && lastChar(finalPath) != '/' {
+=======
+	appendSlash := lastChar(relativePath) == '/' && lastChar(finalPath) != '/'
+	if appendSlash {
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 		return finalPath + "/"
 	}
 	return finalPath

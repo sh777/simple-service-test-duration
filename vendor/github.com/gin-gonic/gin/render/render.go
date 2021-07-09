@@ -27,6 +27,10 @@ var (
 	_ HTMLRender = HTMLDebug{}
 	_ HTMLRender = HTMLProduction{}
 	_ Render     = YAML{}
+<<<<<<< HEAD
+=======
+	_ Render     = MsgPack{}
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	_ Render     = Reader{}
 	_ Render     = AsciiJSON{}
 	_ Render     = ProtoBuf{}

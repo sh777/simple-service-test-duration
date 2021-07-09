@@ -72,16 +72,32 @@ func SysctlUvmexp(name string) (*Uvmexp, error) {
 	return &u, nil
 }
 
+<<<<<<< HEAD
 //sysnb pipe(p *[2]_C_int) (err error)
 func Pipe(p []int) (err error) {
+=======
+func Pipe(p []int) (err error) {
+	return Pipe2(p, 0)
+}
+
+//sysnb	pipe2(p *[2]_C_int, flags int) (err error)
+func Pipe2(p []int, flags int) error {
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	if len(p) != 2 {
 		return EINVAL
 	}
 	var pp [2]_C_int
+<<<<<<< HEAD
 	err = pipe(&pp)
 	p[0] = int(pp[0])
 	p[1] = int(pp[1])
 	return
+=======
+	err := pipe2(&pp, flags)
+	p[0] = int(pp[0])
+	p[1] = int(pp[1])
+	return err
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 }
 
 //sys Getdents(fd int, buf []byte) (n int, err error)

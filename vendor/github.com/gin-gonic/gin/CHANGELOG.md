@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gin ChangeLog
 
 ## Gin v1.7.2
@@ -114,6 +115,9 @@
   * fix comment in `mode.go` [#2129](https://github.com/gin-gonic/gin/pull/2129)
 
 ## Gin v1.5.0
+=======
+### Gin v1.5.0
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 - [FIX] Use DefaultWriter and DefaultErrorWriter for debug messages [#1891](https://github.com/gin-gonic/gin/pull/1891)
 - [NEW] Now you can parse the inline lowercase start structure [#1893](https://github.com/gin-gonic/gin/pull/1893)
@@ -205,7 +209,11 @@
 - [NEW] Upgrade dependency libraries [#1491](https://github.com/gin-gonic/gin/pull/1491)
 
 
+<<<<<<< HEAD
 ## Gin v1.3.0
+=======
+### Gin v1.3.0
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 - [NEW] Add [`func (*Context) QueryMap`](https://godoc.org/github.com/gin-gonic/gin#Context.QueryMap), [`func (*Context) GetQueryMap`](https://godoc.org/github.com/gin-gonic/gin#Context.GetQueryMap), [`func (*Context) PostFormMap`](https://godoc.org/github.com/gin-gonic/gin#Context.PostFormMap) and [`func (*Context) GetPostFormMap`](https://godoc.org/github.com/gin-gonic/gin#Context.GetPostFormMap) to support `type map[string]string` as query string or form parameters, see [#1383](https://github.com/gin-gonic/gin/pull/1383)
 - [NEW] Add [`func (*Context) AsciiJSON`](https://godoc.org/github.com/gin-gonic/gin#Context.AsciiJSON), see [#1358](https://github.com/gin-gonic/gin/pull/1358)
@@ -227,7 +235,11 @@
 - [FIX] Gin Mode `""` when calling [`func Mode`](https://godoc.org/github.com/gin-gonic/gin#Mode) now returns `const DebugMode`, see [#1250](https://github.com/gin-gonic/gin/pull/1250)
 - [FIX] `Flush()` now doesn't overwrite `responseWriter` status code, see [#1460](https://github.com/gin-gonic/gin/pull/1460)
 
+<<<<<<< HEAD
 ## Gin 1.2.0
+=======
+### Gin 1.2.0
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 - [NEW] Switch from godeps to govendor
 - [NEW] Add support for Let's Encrypt via gin-gonic/autotls
@@ -250,6 +262,7 @@
 - [FIX] Use X-Forwarded-For before X-Real-Ip
 - [FIX] time.Time binding (#904)
 
+<<<<<<< HEAD
 ## Gin 1.1.4
 
 - [NEW] Support google appengine for IsTerminal func
@@ -269,6 +282,27 @@
 - [FIX] Logger: skip ANSI color commands if output is not a tty
 
 ## Gin 1.0rc2 (...)
+=======
+### Gin 1.1.4
+
+- [NEW] Support google appengine for IsTerminal func
+
+### Gin 1.1.3
+
+- [FIX] Reverted Logger: skip ANSI color commands
+
+### Gin 1.1
+
+- [NEW] Implement QueryArray and PostArray methods 
+- [NEW] Refactor GetQuery and GetPostForm 
+- [NEW] Add contribution guide 
+- [FIX] Corrected typos in README
+- [FIX] Removed additional Iota  
+- [FIX] Changed imports to gopkg instead of github in README (#733) 
+- [FIX] Logger: skip ANSI color commands if output is not a tty
+
+### Gin 1.0rc2 (...)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 - [PERFORMANCE] Fast path for writing Content-Type.
 - [PERFORMANCE] Much faster 404 routing
@@ -303,7 +337,11 @@
 - [FIX] MIT license in every file
 
 
+<<<<<<< HEAD
 ## Gin 1.0rc1 (May 22, 2015)
+=======
+### Gin 1.0rc1 (May 22, 2015)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 - [PERFORMANCE] Zero allocation router
 - [PERFORMANCE] Faster JSON, XML and text rendering
@@ -311,7 +349,11 @@
 - [PERFORMANCE] Misc code optimizations. Inlining, tail call optimizations
 - [NEW] Built-in support for golang.org/x/net/context
 - [NEW] Any(path, handler). Create a route that matches any path
+<<<<<<< HEAD
 - [NEW] Refactored rendering pipeline (faster and static typed)
+=======
+- [NEW] Refactored rendering pipeline (faster and static typeded)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 - [NEW] Refactored errors API
 - [NEW] IndentedJSON() prints pretty JSON
 - [NEW] Added gin.DefaultWriter
@@ -347,7 +389,11 @@
 - [FIX] Better support for Google App Engine (using log instead of fmt)
 
 
+<<<<<<< HEAD
 ## Gin 0.6 (Mar 9, 2015)
+=======
+### Gin 0.6 (Mar 9, 2015)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 - [NEW] Support multipart/form-data
 - [NEW] NoMethod handler
@@ -357,14 +403,22 @@
 - [FIX] Improve color logger
 
 
+<<<<<<< HEAD
 ## Gin 0.5 (Feb 7, 2015)
+=======
+### Gin 0.5 (Feb 7, 2015)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 - [NEW] Content Negotiation
 - [FIX] Solved security bug that allow a client to spoof ip
 - [FIX] Fix unexported/ignored fields in binding
 
 
+<<<<<<< HEAD
 ## Gin 0.4 (Aug 21, 2014)
+=======
+### Gin 0.4 (Aug 21, 2014)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 - [NEW] Development mode
 - [NEW] Unit tests
@@ -373,7 +427,11 @@
 - [FIX] Improved documentation for model binding
 
 
+<<<<<<< HEAD
 ## Gin 0.3 (Jul 18, 2014)
+=======
+### Gin 0.3 (Jul 18, 2014)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 
 - [PERFORMANCE] Normal log and error log are printed in the same call.
 - [PERFORMANCE] Improve performance of NoRouter()
@@ -391,7 +449,11 @@
 - [FIX] Check application/x-www-form-urlencoded when parsing form
 
 
+<<<<<<< HEAD
 ## Gin 0.2b (Jul 08, 2014)
+=======
+### Gin 0.2b (Jul 08, 2014)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 - [PERFORMANCE] Using sync.Pool to allocatio/gc overhead
 - [NEW] Travis CI integration
 - [NEW] Completely new logger
@@ -410,7 +472,11 @@
 - [FIX] Recovery() middleware only prints panics
 - [FIX] Context.Get() does not panic anymore. Use MustGet() instead.
 - [FIX] Multiple http.WriteHeader() in NotFound handlers
+<<<<<<< HEAD
 - [FIX] Engine.Run() panics if http server can't be set up
+=======
+- [FIX] Engine.Run() panics if http server can't be setted up
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 - [FIX] Crash when route path doesn't start with '/'
 - [FIX] Do not update header when status code is negative
 - [FIX] Setting response headers before calling WriteHeader in context.String()

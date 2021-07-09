@@ -10,7 +10,10 @@ import (
 	"html/template"
 	"net/http"
 
+<<<<<<< HEAD
 	"github.com/gin-gonic/gin/internal/bytesconv"
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	"github.com/gin-gonic/gin/internal/json"
 )
 
@@ -41,6 +44,12 @@ type AsciiJSON struct {
 	Data interface{}
 }
 
+<<<<<<< HEAD
+=======
+// SecureJSONPrefix is a string which represents SecureJSON prefix.
+type SecureJSONPrefix string
+
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 // PureJSON contains the given interface object.
 type PureJSON struct {
 	Data interface{}
@@ -66,11 +75,16 @@ func (r JSON) WriteContentType(w http.ResponseWriter) {
 // WriteJSON marshals the given interface object and writes it with custom ContentType.
 func WriteJSON(w http.ResponseWriter, obj interface{}) error {
 	writeContentType(w, jsonContentType)
+<<<<<<< HEAD
 	jsonBytes, err := json.Marshal(obj)
 	if err != nil {
 		return err
 	}
 	_, err = w.Write(jsonBytes)
+=======
+	encoder := json.NewEncoder(w)
+	err := encoder.Encode(&obj)
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	return err
 }
 
@@ -98,9 +112,14 @@ func (r SecureJSON) Render(w http.ResponseWriter) error {
 		return err
 	}
 	// if the jsonBytes is array values
+<<<<<<< HEAD
 	if bytes.HasPrefix(jsonBytes, bytesconv.StringToBytes("[")) && bytes.HasSuffix(jsonBytes,
 		bytesconv.StringToBytes("]")) {
 		_, err = w.Write(bytesconv.StringToBytes(r.Prefix))
+=======
+	if bytes.HasPrefix(jsonBytes, []byte("[")) && bytes.HasSuffix(jsonBytes, []byte("]")) {
+		_, err = w.Write([]byte(r.Prefix))
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 		if err != nil {
 			return err
 		}
@@ -128,11 +147,19 @@ func (r JsonpJSON) Render(w http.ResponseWriter) (err error) {
 	}
 
 	callback := template.JSEscapeString(r.Callback)
+<<<<<<< HEAD
 	_, err = w.Write(bytesconv.StringToBytes(callback))
 	if err != nil {
 		return err
 	}
 	_, err = w.Write(bytesconv.StringToBytes("("))
+=======
+	_, err = w.Write([]byte(callback))
+	if err != nil {
+		return err
+	}
+	_, err = w.Write([]byte("("))
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	if err != nil {
 		return err
 	}
@@ -140,7 +167,11 @@ func (r JsonpJSON) Render(w http.ResponseWriter) (err error) {
 	if err != nil {
 		return err
 	}
+<<<<<<< HEAD
 	_, err = w.Write(bytesconv.StringToBytes(");"))
+=======
+	_, err = w.Write([]byte(");"))
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	if err != nil {
 		return err
 	}
@@ -162,7 +193,11 @@ func (r AsciiJSON) Render(w http.ResponseWriter) (err error) {
 	}
 
 	var buffer bytes.Buffer
+<<<<<<< HEAD
 	for _, r := range bytesconv.BytesToString(ret) {
+=======
+	for _, r := range string(ret) {
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 		cvt := string(r)
 		if r >= 128 {
 			cvt = fmt.Sprintf("\\u%04x", int64(r))

@@ -9,7 +9,11 @@ import (
 	"os"
 )
 
+<<<<<<< HEAD
 type onlyFilesFS struct {
+=======
+type onlyfilesFS struct {
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	fs http.FileSystem
 }
 
@@ -26,11 +30,19 @@ func Dir(root string, listDirectory bool) http.FileSystem {
 	if listDirectory {
 		return fs
 	}
+<<<<<<< HEAD
 	return &onlyFilesFS{fs}
 }
 
 // Open conforms to http.Filesystem.
 func (fs onlyFilesFS) Open(name string) (http.File, error) {
+=======
+	return &onlyfilesFS{fs}
+}
+
+// Open conforms to http.Filesystem.
+func (fs onlyfilesFS) Open(name string) (http.File, error) {
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	f, err := fs.fs.Open(name)
 	if err != nil {
 		return nil, err

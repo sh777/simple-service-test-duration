@@ -22,7 +22,10 @@ const (
 	// TestMode indicates gin mode is test.
 	TestMode = "test"
 )
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 const (
 	debugCode = iota
 	releaseCode
@@ -51,21 +54,34 @@ func init() {
 
 // SetMode sets gin mode according to input string.
 func SetMode(value string) {
+<<<<<<< HEAD
 	if value == "" {
 		value = DebugMode
 	}
 
 	switch value {
 	case DebugMode:
+=======
+	switch value {
+	case DebugMode, "":
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 		ginMode = debugCode
 	case ReleaseMode:
 		ginMode = releaseCode
 	case TestMode:
 		ginMode = testCode
 	default:
+<<<<<<< HEAD
 		panic("gin mode unknown: " + value + " (available mode: debug release test)")
 	}
 
+=======
+		panic("gin mode unknown: " + value)
+	}
+	if value == "" {
+		value = DebugMode
+	}
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 	modeName = value
 }
 
@@ -80,7 +96,11 @@ func EnableJsonDecoderUseNumber() {
 	binding.EnableDecoderUseNumber = true
 }
 
+<<<<<<< HEAD
 // EnableJsonDecoderDisallowUnknownFields sets true for binding.EnableDecoderDisallowUnknownFields to
+=======
+// EnableJsonDisallowUnknownFields sets true for binding.EnableDecoderDisallowUnknownFields to
+>>>>>>> 9362ae084505e4d2b7e6c8fa897cf6dfdb8d64f7
 // call the DisallowUnknownFields method on the JSON Decoder instance.
 func EnableJsonDecoderDisallowUnknownFields() {
 	binding.EnableDecoderDisallowUnknownFields = true
