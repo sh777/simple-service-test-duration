@@ -26,7 +26,7 @@ func main() {
 		duration := c.Param("duration")
 		d, _ := strconv.Atoi(duration)
 		time.Sleep(time.Duration(d) * time.Second)
-		c.String(http.StatusOK, "v2 delayed %s seconds on %s", duration, hostName)
+		c.String(http.StatusOK, "v4 delayed %s seconds on %s", duration, hostName)
 	})
 
 	router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
