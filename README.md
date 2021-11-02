@@ -1,0 +1,1 @@
+![example workflow](https://github.com/sh777/simple-service-test-duration/actions/workflows/build.yaml/badge.svg)
