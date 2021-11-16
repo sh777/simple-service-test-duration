@@ -48,6 +48,10 @@ func main() {
 		c.JSON(http.StatusOK, c.Request.Header)
 	})
 
+	router.POST("/header", func(c *gin.Context) {
+		c.JSON(http.StatusOK, c.Request.Header)
+	})
+
 	router.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"message": "Page not found",
