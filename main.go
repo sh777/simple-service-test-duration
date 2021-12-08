@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 	"strconv"
@@ -45,10 +46,12 @@ func main() {
 	})
 
 	router.GET("/header", func(c *gin.Context) {
+		fmt.Println(c.Request.Header)
 		c.JSON(http.StatusOK, c.Request.Header)
 	})
 
 	router.POST("/header", func(c *gin.Context) {
+		fmt.Println(c.Request.Header)
 		c.JSON(http.StatusOK, c.Request.Header)
 	})
 
