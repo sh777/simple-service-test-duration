@@ -8,7 +8,7 @@ jobs:
     env: 
       DOCKER_REPOSITORY_NAME: sh777
       DOCKER_IMAGE_NAME: simple-service
-      DOCKER_TAG_PREFIX: 1.0.
+      DOCKER_TAG_PREFIX: 1.1.
 
     steps:
       - name: Checkout
