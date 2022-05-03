@@ -55,6 +55,18 @@ func main() {
 		c.JSON(http.StatusOK, c.Request.Header)
 	})
 
+	router.GET("/header/:key/*value", func(c *gin.Context) {
+		//fmt.Println(c.Request.Header)
+		key := c.Param("key")
+		value := c.Param("value")
+		if c.Request.Header.Get(key) == value {
+			c.JSON(http.StatusOK, key+": "+value)
+		} else {
+			c.JSON(http.StatusBadRequest, key+": "+value)
+		}
+
+	})
+
 	router.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"message": "Page not found",
