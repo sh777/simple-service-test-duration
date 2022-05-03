@@ -55,14 +55,14 @@ func main() {
 		c.JSON(http.StatusOK, c.Request.Header)
 	})
 
-	router.GET("/header/:key/*value", func(c *gin.Context) {
+	router.GET("/header/:key/:value", func(c *gin.Context) {
 		//fmt.Println(c.Request.Header)
 		key := c.Param("key")
 		value := c.Param("value")
 		if c.Request.Header.Get(key) == value {
 			c.JSON(http.StatusOK, key+": "+value)
 		} else {
-			c.JSON(http.StatusBadRequest, key+": "+value)
+			c.JSON(http.StatusBadRequest, "Excepting "+value+" but getting "+key+": "+c.Request.Header.Get(key))
 		}
 
 	})
