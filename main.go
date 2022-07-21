@@ -67,6 +67,17 @@ func main() {
 
 	})
 
+	router.GET("/response/:code", func(c *gin.Context) {
+		code := c.Param("code")
+		intCode, err := strconv.Atoi(code)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, "Excepting Integer but getting "+code)
+		} else {
+			c.String(intCode, "%s responsed %s on %s", service_tag, code, hostName)
+		}
+
+	})
+
 	router.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusNotFound, gin.H{
 			"message": "Page not found",
