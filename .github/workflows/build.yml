@@ -51,3 +51,13 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: ${{ steps.meta.outputs.images }}:latest
           cache-to: type=inline
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: '${{env.DOCKER_REPOSITORY_NAME}}/${{env.DOCKER_IMAGE_NAME}}:latest'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
