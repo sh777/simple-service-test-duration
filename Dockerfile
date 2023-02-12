@@ -1,4 +1,4 @@
-FROM golang:1.16 as builder
+FROM golang:1.20 as builder
 
 WORKDIR /go/src/github.com/sh777/simple-service-test-duration
 COPY . /go/src/github.com/sh777/simple-service-test-duration
