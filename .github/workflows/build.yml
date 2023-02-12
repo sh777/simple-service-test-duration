@@ -27,7 +27,7 @@ jobs:
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: ${{env.DOCKER_REPOSITORY_NAME}}/${{env.DOCKER_IMAGE_NAME}}
           tags: |
@@ -36,7 +36,6 @@ jobs:
             type=ref,event=tag
             type=ref,event=pr
             type=semver,pattern={{version}}
-            type=sha,prefix={{branch}}-
             type=raw,${{ steps.extract-tag.outputs.result }}
           flavor: |
             latest=true
